@@ -2,14 +2,27 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/Not.hdl
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 14/04/2024
+
 /**
  * Not gate:
- * if (in) out = 0, else out = 1
+ * use to gate Nand
  */
+
 CHIP Not {
     IN in;
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    Nand (a = in, b = in, out = out); 
+
+    // Notes: 
+    // a = 1 ou 0, b = a , out = (a.b)'
+    // ligar as entradas da porta NAND juntas, onde a saída será a inversão da entrada.
+   
+
+ 
 }
