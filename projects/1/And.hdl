@@ -2,14 +2,28 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/And.hdl
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 14/04/2024
+
 /**
  * And gate:
- * if (a and b) out = 1, else out = 0 
+ * use to gate Nand
  */
+
 CHIP And {
     IN a, b;
     OUT out;
     
     PARTS:
-    //// Replace this comment with your code.
+    Nand (a = a, b = b, out = notand);
+    Nand (a = notand, b = notand, out = out);
+
+
+      // Notes: 
+      // a = 1 ou 0, b = 1 ou 0, out = (a.b)' -> Nand
+      // a = (a.b)', b = (a.b)', out = ((a.b)')' -> Nand como not
+      // Aplicar uma NAND para realizar a lógica AND invertida, e  ligar a saída nas entradas da próxima NAND que será usada para  retirar a inversão do resultado.
+     
 }

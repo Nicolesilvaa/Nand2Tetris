@@ -2,14 +2,30 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/Xor.hdl
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 14/04/2024
+
 /**
- * Exclusive-or gate:
- * if ((a and Not(b)) or (Not(a) and b)) out = 1, else out = 0
+ * And gate:
+ * use to gate Nand
  */
+
 CHIP Xor {
     IN a, b;
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    Nand (a = a, b  = a ,out =  nota); 
+    Nand (a = b, b  = a,out =  notb);
+    And  (a = nota, b = b, out = out1);
+    And (a = a, b = notb, out = out2);
+    Or   (a = out1,  b = out2, out = out);
+
+      // Notes: 
+      // a = 1 ou 0, b = a , out = a' -> Nand como Not
+      // a = b, b = 1 ou 0 , out = b' -> Nand como Not
+      // a = a , b = b', out = (a.b')' = a' + b -> Nand1
+      // a = a', b = b, out = (a'.b)' = a + b' - > Nand2  
 }
