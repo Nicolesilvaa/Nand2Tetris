@@ -2,14 +2,21 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/Or8Way.hdl
+
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 22/04/2024
+
 /**
  * 8-way Or gate: 
  * out = in[0] Or in[1] Or ... Or in[7]
  */
+
 CHIP Or8Way {
     IN in[8];
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    
 }

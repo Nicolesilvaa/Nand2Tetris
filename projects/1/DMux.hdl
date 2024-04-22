@@ -2,15 +2,26 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/DMux.hdl
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 22/04/2024
+
+
 /**
  * Demultiplexor:
  * [a, b] = [in, 0] if sel = 0
  *          [0, in] if sel = 1
  */
+
 CHIP DMux {
     IN in, sel;
     OUT a, b;
 
+
     PARTS:
-    //// Replace this comment with your code.
+    Not(in = sel , out = NotA);
+    And(a = in, b = NotA, out = a);
+    And(a = sel, b = in, out = b);
+   
 }

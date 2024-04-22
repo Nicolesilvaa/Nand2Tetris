@@ -2,14 +2,28 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/Mux.hdl
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 22/04/2024
+
+
 /** 
  * Multiplexor:
  * if (sel = 0) out = a, else out = b
  */
+
+
 CHIP Mux {
     IN a, b, sel;
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+
+    Not(in = sel , out = NotA);
+    And(a = a, b = NotA, out = outE0);
+    And(a = sel, b = b, out = outE1);
+    Or(a = outE0, b = outE1, out = out);
+    
+    
 }
