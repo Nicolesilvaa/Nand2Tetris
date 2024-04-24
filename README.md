@@ -1,5 +1,5 @@
 # Projeto de Circuitos Lógicos: Nand2Tetris 🔧
-
+### Objetivo 🎯 : Visa construir um sistema de computador de uso geral e um ahierarquia de software moderna, desde os princípios básicos. 
 > Site oficial: [Nand2Tetris](https://www.nand2tetris.org/course)
 
 ### Projeto 1 📌: 
