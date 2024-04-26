@@ -3,12 +3,12 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/Mux8Way16.hdl
 
-
-/**
 // Author: Nicole Silva
 // Location: Salvador-BA
 // Date: 26/04/2024
 
+
+/**
  * 8-way 16-bit multiplexor:
  * out = a if sel = 000
  *       b if sel = 001
@@ -27,8 +27,8 @@ CHIP Mux8Way16 {
     OUT out[16];
 
     PARTS:
-    Mux4Way16 (a = a,  b = b, c = c, d = d,  sel[0] = sel[0], sel[1] = [1],  out = outABCD);
-    Mux4Way16 (a = e,  b = f, c = g, d = h,  sel[0] = sel[0], sel[1] = [1],  out = outEFGH);
+    Mux4Way16 (a = a,  b = b, c = c, d = d,  sel[0] = sel[0], sel[1] = sel[1],  out = outABCD);
+    Mux4Way16 (a = e,  b = f, c = g, d = h,  sel[0] = sel[0], sel[1] = sel[1],  out = outEFGH);
     Mux16 (a = outABCD, b = outEFGH,  sel =  sel[2], out = out);
 
     

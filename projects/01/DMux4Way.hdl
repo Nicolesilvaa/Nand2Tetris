@@ -2,6 +2,12 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/DMux4Way.hdl
+
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 26/04/2024
+
 /**
  * 4-way demultiplexor:
  * [a, b, c, d] = [in, 0, 0, 0] if sel = 00
@@ -9,10 +15,13 @@
  *                [0, 0, in, 0] if sel = 10
  *                [0, 0, 0, in] if sel = 11
  */
+
 CHIP DMux4Way {
     IN in, sel[2];
     OUT a, b, c, d;
 
     PARTS:
-  
+    DMux(in = in, sel = sel[1], a = outAB, b = outCD);
+    DMux(in = outAB, sel = sel[0], a = a, b = b);
+    DMux(in = outCD, sel = sel[0], a = c, b = d);
 }
