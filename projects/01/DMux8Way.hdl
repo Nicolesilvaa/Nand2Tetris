@@ -2,6 +2,11 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/DMux8Way.hdl
+
+// Author: Nicole Silva
+// Location: Salvador-BA
+// Date: 26/04/2024
+
 /**
  * 8-way demultiplexor:
  * [a, b, c, d, e, f, g, h] = [in, 0,  0,  0,  0,  0,  0,  0] if sel = 000
@@ -13,10 +18,13 @@
  *                            [0,  0,  0,  0,  0,  0, in,  0] if sel = 110
  *                            [0,  0,  0,  0,  0,  0,  0, in] if sel = 111
  */
+
 CHIP DMux8Way {
     IN in, sel[3];
     OUT a, b, c, d, e, f, g, h;
 
     PARTS:
-    //// Replace this comment with your code.
+    DMux(in = in, sel = sel[2], a = outABCD, b = outEFGH);
+    DMux4Way(in = outABCD, sel[0] = sel[0], sel[1] = sel[1], a = a, b = b, c = c, d = d);
+    DMux4Way(in = outEFGH, sel[0] = sel[0], sel[1]  = sel[1], a = e, b = f, c = g, d = h);
 }
