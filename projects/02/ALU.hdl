@@ -2,6 +2,7 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/2/ALU.hdl
+
 /**
  * ALU (Arithmetic Logic Unit):
  * Computes out = one of the following functions:
@@ -16,6 +17,11 @@
  * if (out == 0) zr = 1, else zr = 0
  * if (out < 0)  ng = 1, else ng = 0
  */
+
+//Author: Nicole Silva
+//Location: Salvador - BA
+//Date: 30/07/2024
+
 // Implementation: Manipulates the x and y inputs
 // and operates on the resulting values, as follows:
 // if (zx == 1) sets x = 0        // 16-bit constant
@@ -41,5 +47,5 @@ CHIP ALU {
         ng;      // if (out < 0)  equals 1, else 0
 
     PARTS:
-    //// Replace this comment with your code.
+    //
 }
